@@ -15,5 +15,6 @@ public class Calculator {
 
     boolean isPositive(int i) {
         return (i >= 0);
+
     }
 }
