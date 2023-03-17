@@ -1,11 +1,13 @@
-public class Device {
+public abstract class Device {
 
     private String name;
     private String description;
+    private int id;
 
     public Device(String name, String description) {
         this.name = name;
         this.description = description;
+        this.setId(generateId());
     }
 
     public String getName() {
@@ -23,6 +25,16 @@ public class Device {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public abstract int generateId();
 
     public String toString(){
         String ret = "";

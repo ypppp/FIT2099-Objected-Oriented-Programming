@@ -1,5 +1,7 @@
 public class Computer extends Device{
     private String manufacturer;
+    private static final int ID_MIN = 100000;
+    private static final int ID_MAX = 9999999;
 
     public Computer(String name, String description, String manufacturer) {
         super(name, description);
@@ -15,7 +17,12 @@ public class Computer extends Device{
     }
 
     @Override
+    public int generateId() {
+        return Utils.nextID(ID_MIN,ID_MAX);
+    }
+
+    @Override
     public String toString() {
-        return "Type: Computer | " + super.toString() + " | manufacturer: " + getManufacturer();
+        return "ID: " + generateId() + " Type: Computer | " + super.toString() + " | manufacturer: " + getManufacturer();
     }
 }
