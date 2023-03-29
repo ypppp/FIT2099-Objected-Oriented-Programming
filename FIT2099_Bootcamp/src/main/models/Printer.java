@@ -1,3 +1,7 @@
+package main.models;
+
+import main.utils.Utils;
+
 public class Printer extends Device{
     private int ppm;
     private static final int ID_MIN = 100;
@@ -7,6 +11,7 @@ public class Printer extends Device{
     public Printer(String name, String description, int ppm) {
         super(name, description);
         this.ppm = ppm;
+        setId(generateId());
     }
 
     public int getPpm() {
@@ -24,7 +29,7 @@ public class Printer extends Device{
 
     @Override
     public String toString() {
-        return "ID: " + generateId() + " Type: Printer | " + super.toString() + " | PPM: " + getPpm();
+        return "ID: " + super.getId() + " Type: main.models.Printer | " + super.toString() + " | PPM: " + getPpm();
 
     }
 }

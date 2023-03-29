@@ -1,3 +1,7 @@
+package main.models;
+
+import main.utils.Utils;
+
 public class Computer extends Device{
     private String manufacturer;
     private static final int ID_MIN = 100000;
@@ -6,6 +10,7 @@ public class Computer extends Device{
     public Computer(String name, String description, String manufacturer) {
         super(name, description);
         this.manufacturer = manufacturer;
+        setId(generateId());
     }
 
     public String getManufacturer() {
@@ -23,6 +28,6 @@ public class Computer extends Device{
 
     @Override
     public String toString() {
-        return "ID: " + generateId() + " Type: Computer | " + super.toString() + " | manufacturer: " + getManufacturer();
+        return "ID: " + super.getId() + " Type: main.models.Computer | " + super.toString() + " | manufacturer: " + getManufacturer();
     }
 }
