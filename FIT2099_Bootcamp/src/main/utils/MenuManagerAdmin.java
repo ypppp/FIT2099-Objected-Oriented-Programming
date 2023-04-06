@@ -1,8 +1,37 @@
 package main.utils;
 
 import java.util.Scanner;
+/**
+ * @author Yee Perng Yew
+ * @version 1
+ * @see Scanner
+ */
+public class MenuManagerAdmin implements IMenuManager {
 
-public class MenuInput {
+
+    private static MenuManagerAdmin menuManagerAdmin = null; // a variable to set it null for the factory method
+
+    /**
+     *
+     */
+    private MenuManagerAdmin(){
+
+    }
+
+    /**
+     *
+     * @return
+     */
+    public static MenuManagerAdmin getInstance(){
+        menuManagerAdmin = new MenuManagerAdmin();
+
+        return menuManagerAdmin;
+    }
+
+    /**
+     *
+     * @return
+     */
     public int menuItem() {
         Scanner sel = new Scanner(System.in);
 
